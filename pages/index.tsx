@@ -58,7 +58,7 @@ const TransactionsForAddress = ({ currentAddr, provider }: { currentAddr: string
   console.log('filtered:', filtered);
 
   return (
-    <div className="flex justify-center mt-8">
+    <div className="flex justify-center w-full mt-8">
       <div className="space-y-2">
         {filtered &&
           filtered.map((tx, i) => (
