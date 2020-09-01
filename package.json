@@ -1,5 +1,5 @@
 {
-  "name": "kodeart",
+  "name": "yscan",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -57,6 +57,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "dotenv": "^8.2.0",
+    "ethers": "^5.0.9",
     "heroicons": "^0.3.6",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.5.2",
@@ -70,7 +71,8 @@
     "react-query-devtools": "^2.0.0",
     "react-select": "^3.1.0",
     "react-toast-notifications": "^2.4.0",
-    "recoil": "^0.0.10"
+    "recoil": "^0.0.10",
+    "redaxios": "^0.3.0"
   },
   "devDependencies": {
     "@tailwindcss/ui": "^0.3.0",

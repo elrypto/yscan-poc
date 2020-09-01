@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import mitt from 'next/dist/next-server/lib/mitt';
+import { useRecoilState } from 'recoil';
+import { ethereumProviderAtom } from '../../lib/recoilAtoms';
 
 
 const useEthAccount = () => {
   const [currentAddress, setCurrentAddress] = useState('');
+  const [provider, setProvider] = useState(null);
+
 
   useEffect(() => {
     const getInjectedWeb3 = async () => {
@@ -16,6 +19,8 @@ const useEthAccount = () => {
           const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
           const current = accounts[0];
           setCurrentAddress(current);
+          setProvider(ethereum);
+
         } catch (e) {
           console.error('user refused to connect')
         }
@@ -38,7 +43,7 @@ const useEthAccount = () => {
 
   }, []);
 
-  return currentAddress;
+  return { currentAddress, provider };
 }
 export default useEthAccount;
 
