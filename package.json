@@ -1,0 +1,109 @@
+{
+  "name": "kodeart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "nextdev": "next",
+    "dev": "concurrently -r \"npm:type-check:watch\" \"npm:nextdev\"",
+    "type-check:watch": "tsc --noEmit --watch",
+    "build": "cross-env NODE_ENV=production next build",
+    "start": "next start",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "npm run test --watchAll false --coverage",
+    "test:debug": "node --inspect-brk ./node_modules/react-scripts/scripts/test.js --runInBand",
+    "lint": "eslint . --cache-location node_modules/.cache/eslint",
+    "setup": "node ./scripts/setup && npm run validate",
+    "validate": "npm-run-all --parallel lint test:coverage build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.ts"
+    ],
+    "moduleNameMapper": {
+      ".+\\.css$": "<rootDir>/src/styleMock.ts"
+    },
+    "testMatch": [
+      "**/__tests__/*.(test|spec).(ts|tsx|js)"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lrypto/kode.art"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lrypt/kodeart/issues"
+  },
+  "homepage": "https://github.com/lrypto/kodeart#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "dotenv": "^8.2.0",
+    "heroicons": "^0.3.6",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.5.2",
+    "next-svgr": "^0.0.2",
+    "nookies": "^2.3.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^6.0.1",
+    "react-modal": "^3.11.2",
+    "react-query": "^2.9.0",
+    "react-query-devtools": "^2.0.0",
+    "react-select": "^3.1.0",
+    "react-toast-notifications": "^2.4.0",
+    "recoil": "^0.0.10"
+  },
+  "devDependencies": {
+    "@tailwindcss/ui": "^0.3.0",
+    "@testing-library/react": "^10.4.2",
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.3",
+    "@types/react": "^16.9.35",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.2",
+    "eslint": "7.2.0",
+    "eslint-config-airbnb": "18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-flowtype": "^5.1.3",
+    "eslint-plugin-html": "^6.0.2",
+    "eslint-plugin-import": "2.21.2",
+    "eslint-plugin-jest": "^23.17.1",
+    "eslint-plugin-json": "^2.1.1",
+    "eslint-plugin-jsx-a11y": "6.3.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "7.20.0",
+    "eslint-plugin-react-hooks": "4.0.0",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "jest-extended": "^0.11.5",
+    "jest-in-case": "^1.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.0.5",
+    "tailwindcss": "^1.7.3",
+    "ts-jest": "^26.1.1",
+    "typescript": "^4.0.2"
+  }
+}

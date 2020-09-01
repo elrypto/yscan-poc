@@ -1,0 +1,11 @@
+/* purgecss start ignore */
+@tailwind base;
+
+html{
+  @apply font-sans antialiased text-cool-gray-50 bg-cool-gray-900;
+}
+
+@tailwind components;
+/* purgecss end ignore */
+
+@tailwind utilities;
