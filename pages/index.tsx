@@ -52,7 +52,7 @@ const TransactionsForAddress = ({ currentAddr, provider }: { currentAddr: string
 
 
   if (isLoading) return <div className="mt-6 text-cool-gray-300">Loading...</div>;
-  if (error) return <div className="mt-6 text-red-600">Error: {error.message}</div>
+  if (error) return <div className="mt-6 text-red-600">Error: {JSON.stringify(error)}</div>
 
 
   console.log('filtered:', filtered);
